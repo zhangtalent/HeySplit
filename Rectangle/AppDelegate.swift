@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-// import Sparkle
+import Sparkle
 import ServiceManagement
 import os.log
 
@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private let accessibilityAuthorization = AccessibilityAuthorization()
     private let statusItem = RectangleStatusItem.instance
     static let windowHistory = WindowHistory()
-    // static let updaterController = SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil)
+    static let updaterController = SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil)
 
     private var shortcutManager: ShortcutManager!
     private var windowManager: WindowManager!
@@ -99,7 +99,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func checkAutoCheckForUpdates() {
-        // Self.updaterController.updater.automaticallyChecksForUpdates = Defaults.SUEnableAutomaticChecks.enabled
+        Self.updaterController.updater.automaticallyChecksForUpdates = Defaults.SUEnableAutomaticChecks.enabled
     }
     
     func accessibilityTrusted() {
@@ -234,7 +234,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func checkForUpdates(_ sender: Any) {
-        // Self.updaterController.checkForUpdates(sender)
+        Self.updaterController.checkForUpdates(sender)
     }
     
     @IBAction func authorizeAccessibility(_ sender: Any) {

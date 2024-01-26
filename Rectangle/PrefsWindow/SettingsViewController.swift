@@ -8,7 +8,7 @@
 
 import Cocoa
 import ServiceManagement
-// import Sparkle
+import Sparkle
 import MASShortcut
 
 class SettingsViewController: NSViewController {
@@ -89,7 +89,7 @@ class SettingsViewController: NSViewController {
     }
     
     @IBAction func checkForUpdates(_ sender: Any) {
-        // AppDelegate.updaterController.checkForUpdates(sender)
+        AppDelegate.updaterController.checkForUpdates(sender)
     }
     
     @IBAction func toggleDoubleClickTitleBar(_ sender: NSButton) {
@@ -160,6 +160,14 @@ class SettingsViewController: NSViewController {
     }
     
     @IBAction func restoreDefaults(_ sender: Any) {
+        WindowAction.active.forEach { UserDefaults.standard.removeObject(forKey: $0.name) }
+        Defaults.alternateDefaultShortcuts.enabled = true
+        Notification.Name.changeDefaults.post()
+        // Restore snap areas
+        Defaults.portraitSnapAreas.typedValue = nil
+        Defaults.landscapeSnapAreas.typedValue = nil
+        Notification.Name.defaultSnapAreas.post()
+        return
         // Ask user if they want to restore to Rectangle or Spectacle defaults
         let currentDefaults = Defaults.alternateDefaultShortcuts.enabled ? "Rectangle" : "Spectacle"
         let defaultShortcutsTitle = NSLocalizedString("Default Shortcuts", tableName: "Main", value: "", comment: "")
@@ -215,7 +223,7 @@ class SettingsViewController: NSViewController {
     override func awakeFromNib() {
         initializeToggles()
 
-        // checkForUpdatesAutomaticallyCheckbox.bind(.value, to: AppDelegate.updaterController.updater, withKeyPath: "automaticallyChecksForUpdates", options: nil)
+        checkForUpdatesAutomaticallyCheckbox.bind(.value, to: AppDelegate.updaterController.updater, withKeyPath: "automaticallyChecksForUpdates", options: nil)
         
         let appVersionString: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         let buildString: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String

@@ -20,6 +20,7 @@
 		6490B3A127BF98C70056C220 /* BottomRightEighthCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490B3A027BF98C70056C220 /* BottomRightEighthCalculation.swift */; };
 		729E0A982AFF76B1006E2F48 /* CenterProminentlyCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729E0A972AFF76B1006E2F48 /* CenterProminentlyCalculation.swift */; };
 		72E5A8282B5E4463009FEB20 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 72E5A8272B5E4463009FEB20 /* MASShortcut */; };
+		72FC32E52B6378DC002B5A5A /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 72FC32E42B6378DC002B5A5A /* Sparkle */; };
 		866661F2257D248A00A9CD2D /* RepeatedExecutionsInThirdsCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866661F1257D248A00A9CD2D /* RepeatedExecutionsInThirdsCalculation.swift */; };
 		9818E00D28B59205004AA524 /* CompoundSnapArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9818E00C28B59205004AA524 /* CompoundSnapArea.swift */; };
 		9818E01028B59396004AA524 /* HalvesCompoundCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9818E00F28B59396004AA524 /* HalvesCompoundCalculation.swift */; };
@@ -330,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72E5A8282B5E4463009FEB20 /* MASShortcut in Frameworks */,
+				72FC32E52B6378DC002B5A5A /* Sparkle in Frameworks */,
 				9821405E22B3ED3600ABFB3F /* ServiceManagement.framework in Frameworks */,
 				12D896200936C0DE9FF41FB4 /* (null) in Frameworks */,
 			);
@@ -667,6 +669,7 @@
 			name = HeySplit;
 			packageProductDependencies = (
 				72E5A8272B5E4463009FEB20 /* MASShortcut */,
+				72FC32E42B6378DC002B5A5A /* Sparkle */,
 			);
 			productName = Rectangle;
 			productReference = 9824700922AF9B7D0037B409 /* HeySplit.app */;
@@ -770,6 +773,7 @@
 			mainGroup = 9824700022AF9B7D0037B409;
 			packageReferences = (
 				72E5A8262B5E4441009FEB20 /* XCLocalSwiftPackageReference "../../MASShortcut" */,
+				72FC32E32B6378B7002B5A5A /* XCLocalSwiftPackageReference "../../Sparkle" */,
 			);
 			productRefGroup = 9824700A22AF9B7D0037B409 /* Products */;
 			projectDirPath = "";
@@ -1010,7 +1014,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.knollsoft.RectangleLauncher;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaoyi.HeySplitLauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -1185,11 +1189,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Rectangle/Rectangle.entitlements;
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 81;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = X4GH8L4MWA;
 				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = Rectangle/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HeySplit;
@@ -1202,6 +1207,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yaoyi.heysplit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "macos distribution";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Rectangle/Rectangle-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1222,7 +1228,7 @@
 				CURRENT_PROJECT_VERSION = 81;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = X4GH8L4MWA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Rectangle/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HeySplit;
@@ -1235,7 +1241,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yaoyi.heysplit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "macos distribution";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Rectangle/Rectangle-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1338,12 +1344,21 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../MASShortcut;
 		};
+		72FC32E32B6378B7002B5A5A /* XCLocalSwiftPackageReference "../../Sparkle" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../Sparkle;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		72E5A8272B5E4463009FEB20 /* MASShortcut */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MASShortcut;
+		};
+		72FC32E42B6378DC002B5A5A /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72FC32E32B6378B7002B5A5A /* XCLocalSwiftPackageReference "../../Sparkle" */;
+			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
